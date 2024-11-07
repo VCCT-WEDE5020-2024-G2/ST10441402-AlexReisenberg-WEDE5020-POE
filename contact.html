@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        <title>Sanlam IT Solutions - Contact Us</title>
+        <meta name="description" content="Get in touch with Sanlam IT Solutions. We provide IT resources and training to underserved communities. Contact us today for more information.">
+        
+        <link rel="stylesheet" href="styles.css">
+    </head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><img src="_images/logo.jpg" alt="Sanlam IT Solutions Logo" class="logo"></li>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About Us</a></li>
+                <li><a href="services.html">Services</a></li>
+                <li><a href="impact.html">Impact Stories</a></li>
+                <li><a href="get-involved.html">Get Involved</a></li>
+                <li><a href="contact.html">Contact Us</a></li>
+               
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <section class="summary">
+            <h1>Contact Us</h1>
+            <img src="_images/unnamed (1).jpg" alt="Sanlam IT Solutions Building" class="hero-image">
+        </section>
+        <section class="hero">
+            <p><strong>Phone Number:</strong> 021 947 9111</p>
+            <p><strong>Email Us:</strong> <a href="mailto:info@sanlamitsolutions.com">info@sanlamitsolutions.com</a></p>
+            <p><strong>Physical Address:</strong><br> Sanlam Head Office, 2 Strand Road, Bellville</p>
+            <div class="social-media">
+                <a href="#"><img src="_images/Facebook_Logo_2023.png" alt="Follow us on Facebook"></a>
+                <a href="#"><img src="_images/360_F_627170676_ySfg9ZDrJvtUdjKcoePJuIgeYxr7rJUr (1).jpg" alt="Follow us on Twitter"></a>
+                <a href="#"><img src="_images/circle-linkedin-512.jpg" alt="Follow us on LinkedIn"></a>
+            </div>
+            <main>
+                <section class="hero">
+                    <article class="summary">
+                        <h2>Become a member...</h2>
+                        <form action="sendresults.php" method="post" id="membershipForm" onsubmit="return validateForm()">
+                            <table>
+                                <tr>
+                                    <td><label for="myName">Name:</label></td>
+                                    <td>
+                                        <input type="text" name="myName" id="myName" placeholder="Your name here" onfocus="this.placeholder=''">
+                                        <div id="nameError" class="error"></div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td><label for="myEmail">Email:</label></td>
+                                    <td>
+                                        <input type="email" name="myEmail" id="myEmail" placeholder="Your email here" onfocus="this.placeholder=''">
+                                        <div id="emailError" class="error"></div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td><label for="myProv">Province:</label></td>
+                                    <td>
+                                        <select name="myProv" id="myProv">
+                                            <option value="0">Choose...</option>
+                                            <option value="1">Gauteng</option>
+                                            <option value="2">KwaZulu-Natal</option>
+                                            <option value="3">Western Cape</option>
+                                            <option value="4">Northern Cape</option>
+                                            <option value="5">Eastern Cape</option>
+                                            <option value="6">Free State</option>
+                                            <option value="7">Limpopo</option>
+                                            <option value="8">Mpumalanga</option>
+                                            <option value="9">North West</option>
+                                        </select>
+                                        <div id="provinceError" class="error"></div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>Gender:</td>
+                                    <td>
+                                        <label><input type="radio" name="myGender" value="Male"> Male</label><br>
+                                        <label><input type="radio" name="myGender" value="Female"> Female</label><br>
+                                        <label><input type="radio" name="myGender" value="NA"> Rather not say</label>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>Interests:</td>
+                                    <td>
+                                        <label><input type="checkbox" value="sport" name="myInterests"> Sport</label><br>
+                                        <label><input type="checkbox" value="movies" name="myInterests"> Movies</label><br>
+                                        <label><input type="checkbox" value="fitness" name="myInterests"> Fitness</label><br>
+                                        <label><input type="checkbox" value="reading" name="myInterests"> Reading</label><br>
+                                        <label><input type="checkbox" value="gaming" name="myInterests"> Gaming</label>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td></td>
+                                    <td>
+                                        <input type="reset" value="Clear">
+                                        <input type="submit" value="Join">
+                                    </td>
+                                </tr>
+                            </table>
+                        </form>
+                    </article>
+                </section>
+            </main>
+    
+           
+        </div>
+    
+        <script>
+            function validateForm() {
+                let isValid = true;
+    
+                // Clear previous errors
+                document.getElementById("nameError").textContent = "";
+                document.getElementById("emailError").textContent = "";
+                document.getElementById("provinceError").textContent = "";
+    
+                // Validate Name
+                var name = document.getElementById("myName").value;
+                if (name === "") {
+                    document.getElementById("nameError").textContent = "Please enter your name";
+                    isValid = false;
+                }
+    
+                // Validate Email
+                var email = document.getElementById("myEmail").value;
+                if (!email.includes("@") || !email.includes(".")) {
+                    document.getElementById("emailError").textContent = "Please enter a valid email address";
+                    isValid = false;
+                }
+    
+                // Validate Province
+                var province = document.getElementById("myProv").value;
+                if (province === "0") {
+                    document.getElementById("provinceError").textContent = "Please select your province";
+                    isValid = false;
+                }
+    
+                // Form successfully validated
+                if (isValid) {
+                    document.querySelector(".summary").innerHTML = "<h2>Thanks for Joining!</h2>";
+                }
+                return isValid;
+            }
+        </script>
+    </body>
+    
+            
+        </section>
+    </main>
+    <footer>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About Us</a></li>
+                <li><a href="services.html">Services</a></li>
+                <li><a href="impact.html">Impact Stories</a></li>
+                <li><a href="get-involved.html">Get Involved</a></li>
+                <li><a href="contact.html">Contact Us</a></li>
+                
+            </ul>
+        </nav>
+        <p>&copy; Sanlam IT Solutions 2024 | Powered by "Sharp-Sharp" Web Hosting</p>
+    </footer>
+</body>
+</html>
